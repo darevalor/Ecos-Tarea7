@@ -37,7 +37,7 @@ public class Calcular {
      */
     public Double calcularB1(LinkedList<Double> listaX, LinkedList<Double> listaY) throws NumberFormatException {
         if (listaX.size() != listaY.size()) {
-            throw new NumberFormatException("Las listas no tienen el mismo tamaño");
+            throw new NumberFormatException("Las listas no tienen el mismo tamanio");
         }
 
         Double n = new Double(listaX.size());
@@ -61,7 +61,7 @@ public class Calcular {
      */
     public Double calcularB0(LinkedList<Double> listaX, LinkedList<Double> listaY, Double b1) throws NumberFormatException {
         if (listaX.size() != listaY.size()) {
-            throw new NumberFormatException("Las listas no tienen el mismo tamaño");
+            throw new NumberFormatException("Las listas no tienen el mismo tamanio");
         }
 
         Double promedioX = calcularPromedio(listaX);
@@ -81,7 +81,7 @@ public class Calcular {
      */
     public Double calcularR(LinkedList<Double> listaX, LinkedList<Double> listaY) throws NumberFormatException {
         if (listaX.size() != listaY.size()) {
-            throw new NumberFormatException("Las listas no tienen el mismo tamaño");
+            throw new NumberFormatException("Las listas no tienen el mismo tamanio");
         }
 
         Double n = new Double(listaX.size());
@@ -147,7 +147,7 @@ public class Calcular {
      */
     private Double calcularSumatoriaProductos(LinkedList<Double> listaX, LinkedList<Double> listaY) throws NumberFormatException {
         if (listaX.size() != listaY.size()) {
-            throw new NumberFormatException("Las listas no tienen el mismo tamaño");
+            throw new NumberFormatException("Las listas no tienen el mismo tamanio");
         }
 
         Double sumatoria = new Double(0);
