@@ -61,7 +61,7 @@ public class ProcesadorArchivos {
         OutputStream out = null;
         String extension = ".txt";
         String fileName = "grupoDatos";
-        String pathFile = "/temp/";
+        String pathFile = "/tmp/";
         String pathFileName;
         int count = 1;
         File file;
