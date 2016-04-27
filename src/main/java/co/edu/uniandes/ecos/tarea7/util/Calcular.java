@@ -102,7 +102,7 @@ public class Calcular {
      *
      * @param b0 se puede obtener llamando al metodo calcularB0
      * @param b1 se puede obtener llamando al metodo calcularB1
-     * @param xK tamaño de proxy estimado
+     * @param xK tamanio de proxy estimado
      * @return Double con el resultado calculado
      * @throws NumberFormatException
      */
@@ -311,7 +311,7 @@ public class Calcular {
      * Calcula el rango de prediccion
      * @param desvEst Desviacion estandar
      * @param xAvg Promedio de valores X
-     * @param xK Proxy de tamaño estimado
+     * @param xK Proxy de tamanio estimado
      * @param x 
      * @param listaX grupo de datos X
      * @return
