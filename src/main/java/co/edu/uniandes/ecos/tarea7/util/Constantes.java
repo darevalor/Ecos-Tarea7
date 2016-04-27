@@ -20,6 +20,6 @@ public class Constantes {
     public static final Double NUMBER_OF_SEGMENTS = 10D;
     public static final Double ERROR = 0.00001;
     public static final Double XK_1 = 386D;
-    public static final Double XK_2 = 221D;
+    public static final Double XK_2 = 227D;
     public static final Double P_70 = 0.35D;
 }
