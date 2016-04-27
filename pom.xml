@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example</groupId>
   <version>1.0-SNAPSHOT</version>
-  <artifactId>tarea3</artifactId>
+  <artifactId>tarea7</artifactId>
   <dependencies>
     <dependency>
       <groupId>com.sparkjava</groupId>
@@ -67,5 +67,5 @@
       </plugin>
     </plugins>
   </build>
-    <name>Tarea3</name>
+    <name>Tarea7</name>
 </project>

@@ -1,10 +1,10 @@
 /*
 * Class Name: ProcesadorArchivos                                                         
 * Name:       Daniel Arevalo                                                                      
-* Date:       14/02/2016     
+* Date:       26/04/2016     
 * Version:    1.0
 */
-package co.edu.uniandes.ecos.tarea3.util;
+package co.edu.uniandes.ecos.tarea7.util;
 
 import java.io.BufferedReader;
 import java.io.File;

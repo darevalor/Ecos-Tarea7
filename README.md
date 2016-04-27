@@ -1,40 +1,23 @@
-# java-getting-started
+# Tarea 7 
+#	calculate the correlation between two sets of numbers x and y
+#	calculate the significance of that correlation
+#	calculate the linear regression parameters   and   for a set of n pairs of data,
+#	given an estimate,   calculate an improved prediction,   where
+#	calculate the 70% prediction interval for that estimate
 
-A barebones Java app, which can easily be deployed to Heroku.
 
-This application support the [Getting Started with Java on Heroku](https://devcenter.heroku.com/articles/getting-started-with-java) article - check it out.
+Antes de realizar la configuracion del proyecto verifique los siguientes pasos:
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+1. Verifique que tiene instalado Maven ejecutando el siguiente comando en una ventana de comandos: "mvn -v". Si no lo tiene instalado siga las instrucciones indicadas en la siguiente pagina: http://maven.apache.org/install.html.
+2. Verifique que tiene instalado Git en su equipo. Si no es asi puede descargarlo accediendo a la siguiente url: https://git-scm.com/.
 
-## Running Locally
+Pasos para obtener el codigo fuente del Proyecto:
 
-Make sure you have Java and Maven installed.  Also, install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
+1. Abrir la ventana de comandos Git Bash o Git CMD. 
+2. Ubicarse en la carpeta donde usualmente crea sus proyectos de desarrollo.
+3. Descargar el proyecto desde heroku: con el comando: "git clone https://git.heroku.com/ecos-5101-tarea7.git <nombre_proyecto>", donde <nombre_proyecto> sera el nombre que desee ponerle al proyecto.
+4. Descargar el proyecto desde GitHub: con el comando: "git clone https://github.com/darevalor/Ecos-Tarea7.git <nombre_proyecto>", donde <nombre_proyecto> sera el nombre que desee ponerle al proyecto.
+4. Empaquete el proyecto maven con el comando: "mvn package".
+5. Para compilar y correr el test JUnit ejecute el comando "mvn clean install".
 
-```sh
-$ git clone https://github.com/heroku/java-getting-started.git
-$ cd java-getting-started
-$ mvn install
-$ foreman start web
-```
-
-Your app should now be running on [localhost:5000](http://localhost:5000/).
-
-If you're going to use a database, ensure you have a local `.env` file that reads something like this:
-
-```
-DATABASE_URL=postgres://localhost:5432/java_database_name
-```
-
-## Deploying to Heroku
-
-```sh
-$ heroku create
-$ git push heroku master
-$ heroku open
-```
-
-## Documentation
-
-For more information about using Java on Heroku, see these Dev Center articles:
-
-- [Java on Heroku](https://devcenter.heroku.com/categories/java)
+Para acceder al programa en Heroku, ingrese a la siguiente URL: https://ecos-5101-tarea7.herokuapp.com/
