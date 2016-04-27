@@ -308,15 +308,15 @@ public class Tarea7Model {
     }
 
     /**
-     * Retorna el tamaño estimado X
-     * @return Double con el tamaño estimado
+     * Retorna el tamanio estimado X
+     * @return Double con el tamanio estimado
      */
     public Double getxK() {
         return xK;
     }
 
     /**
-     * Establece el tamaño estimado
+     * Establece el tamanio estimado
      * @param xK 
      */
     public void setxK(Double xK) {
