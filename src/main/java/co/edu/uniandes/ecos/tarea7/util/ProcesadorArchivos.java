@@ -26,13 +26,19 @@ public class ProcesadorArchivos {
      * @return Lista de LinkedList de tipo String 
      * @throws Exception
      */
-    public static LinkedList<LinkedList<String>> obtenerGrupoDeDatos(String rutaArchivo) throws Exception {
+    public static LinkedList<LinkedList<String>> obtenerGrupoDeDatos(String rutaArchivo, String grupo) throws Exception {
         LinkedList<LinkedList<String>> listaRetorno = new LinkedList<>();
-
+        
         BufferedReader br = new BufferedReader(new FileReader(rutaArchivo));
         try {
-            String linea = br.readLine();
-            while (linea != null) {
+            String linea;
+            do{
+                linea = br.readLine();
+            }while(!linea.trim().equals(grupo));
+            
+            linea = br.readLine();
+            
+            while (linea != null && !linea.trim().contains("Grupo")) {
 
                 String[] vector = linea.split(";");
 

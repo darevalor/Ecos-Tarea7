@@ -43,16 +43,14 @@ public class Tarea7Controller {
      */
     public String cargarArchivo(Request request, Response response) {
         try {
-            LinkedList<LinkedList<String>> grupoDatos;
-
             MultipartConfigElement multipartConfigElement = new MultipartConfigElement("/tmp");
             request.raw().setAttribute("org.eclipse.multipartConfig", multipartConfigElement);
 
             Part part = request.raw().getPart("file");
             String ruta = ProcesadorArchivos.guardarArchivoEnServidor(part.getInputStream());
-            grupoDatos = ProcesadorArchivos.obtenerGrupoDeDatos(ruta);
+            
 
-            return ejecutarCasos(grupoDatos);
+            return ejecutarCasos(ruta);
         } catch (IOException | ServletException ex ) {
             LOGGER.log(Level.SEVERE, null, ex);
             return ex.getMessage();
@@ -68,31 +66,36 @@ public class Tarea7Controller {
      * @param grupoDatos
      * @return String con el codigo html con los resultados de los casos
      */
-    private String ejecutarCasos(LinkedList<LinkedList<String>> grupoDatos) {
+    private String ejecutarCasos(String ruta) throws Exception{
         LinkedList<Double> listaX;
         LinkedList<Double> listaY;
         StringBuilder tableHtml = new StringBuilder();
+        LinkedList<LinkedList<String>> grupoDatos;
 
         //Caso 1: Estimated Proxy Size Vs Actual Added and Modified Size
+        grupoDatos = ProcesadorArchivos.obtenerGrupoDeDatos(ruta, Constantes.GRUPO_1);
         listaX = obtenerListaValores(grupoDatos, Constantes.ESTIMATED_PROXY_SIZE);
         listaY = obtenerListaValores(grupoDatos, Constantes.ACTUAL_ADDED_MODIFIED_SIZE);
         Tarea7Model caso1 = calcularRegresionYCorrelacion(listaX, listaY, Constantes.XK_1);
         caso1.setNumberTest(1);
 
         //Caso 2: Estimated Proxy Size Vs Actual Development Hours
+        grupoDatos = ProcesadorArchivos.obtenerGrupoDeDatos(ruta, Constantes.GRUPO_1);
         listaX = obtenerListaValores(grupoDatos, Constantes.ESTIMATED_PROXY_SIZE);
         listaY = obtenerListaValores(grupoDatos, Constantes.ACTUAL_DEVELOPMENT_HOURS);
         Tarea7Model caso2 = calcularRegresionYCorrelacion(listaX, listaY, Constantes.XK_1);
         caso2.setNumberTest(2);
 
         //Caso 3: Actual Added and Modified Size Vs Plan Added and Modified size
-        listaX = obtenerListaValores(grupoDatos, Constantes.PLAN_ADDED_MODIFIED_SIZE);
+        grupoDatos = ProcesadorArchivos.obtenerGrupoDeDatos(ruta, Constantes.GRUPO_2);
+        listaX = obtenerListaValores(grupoDatos, Constantes.ESTIMATED_PROXY_SIZE);
         listaY = obtenerListaValores(grupoDatos, Constantes.ACTUAL_ADDED_MODIFIED_SIZE);
         Tarea7Model caso3 = calcularRegresionYCorrelacion(listaX, listaY, Constantes.XK_2);
         caso3.setNumberTest(3);
 
         //Caso 4: Actual Added and Modified Size Vs Actual Development Hours
-        listaX = obtenerListaValores(grupoDatos, Constantes.PLAN_ADDED_MODIFIED_SIZE);
+        grupoDatos = ProcesadorArchivos.obtenerGrupoDeDatos(ruta, Constantes.GRUPO_2);
+        listaX = obtenerListaValores(grupoDatos, Constantes.ESTIMATED_PROXY_SIZE);
         listaY = obtenerListaValores(grupoDatos, Constantes.ACTUAL_DEVELOPMENT_HOURS);
         Tarea7Model caso4 = calcularRegresionYCorrelacion(listaX, listaY, Constantes.XK_2);
         caso4.setNumberTest(4);
